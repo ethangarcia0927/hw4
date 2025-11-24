@@ -1,0 +1,22 @@
+<%- include('partials/head.ejs') %>
+<body>
+    <header>
+    <h1>Ethan Garcia</h1>
+    <h2>Homework 1: Programming Languages</h2>
+  </header>
+  <%- include('partials/nav.ejs') %>
+
+<h2>Programming Language of the Day</h2>
+<p><strong>Name:</strong> <%= randomLang.name %></p>
+<p><strong>First Appeared:</strong> <%= randomLang.firstAppeared %></p>
+<p><strong>Type:</strong> <%= randomLang.type %></p>
+
+<hr />
+
+<h2>Programming Quote</h2>
+<p><em>"<%= quote %>"</em></p>
+<p>- <%= author %></p>
+
+</body>
+
+<%- include('partials/footer.ejs') %>
