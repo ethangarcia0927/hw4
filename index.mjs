@@ -25,18 +25,42 @@ app.get(`/types`, (req,res) => {
     res.render(`types`)
 });
 
-app.get('/jokes', async (req, res) => {
+// app.get('/jokes', async (req, res) => {
+//     try {
+//         // Node package: programming-languages-list
+//         const list = languages.all;
+//         const randomLang = list[Math.floor(Math.random() * list.length)];
+        
+//         // Web API call: Official Joke API (very reliable, no rate limits)
+//         const response = await fetch('https://official-joke-api.appspot.com/random_joke');
+//         const jokeData = await response.json();
+        
+//         // Render the view with data
+//         res.render('jokes', {
+//             randomLang: randomLang,
+//             quote: `${jokeData.setup} - ${jokeData.punchline}`,
+//             author: 'Programming Joke API'
+//         });
+//     } catch (error) {
+//         console.error('Error:', error);
+//         res.status(500).send('Error fetching data');
+//     }
+// });
+app.get('/API', async (req, res) => {
     try {
         // Node package: programming-languages-list
+        console.log('Languages object:', languages); // Debug
         const list = languages.all;
+        console.log('List length:', list.length); // Debug
         const randomLang = list[Math.floor(Math.random() * list.length)];
+        console.log('Random language:', randomLang); // Debug - see what properties it has
         
         // Web API call: Official Joke API (very reliable, no rate limits)
         const response = await fetch('https://official-joke-api.appspot.com/random_joke');
         const jokeData = await response.json();
         
         // Render the view with data
-        res.render('jokes', {
+        res.render('API', {
             randomLang: randomLang,
             quote: `${jokeData.setup} - ${jokeData.punchline}`,
             author: 'Programming Joke API'
@@ -46,7 +70,6 @@ app.get('/jokes', async (req, res) => {
         res.status(500).send('Error fetching data');
     }
 });
-
 
 
 

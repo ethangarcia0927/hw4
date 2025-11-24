@@ -10,9 +10,9 @@ header, main, nav, footer, section {
 section {
     background-color: rgb(84, 84, 84);
     color: rgb(213, 213, 213);
-    margin: 0 auto; /* This centers the section */
-    padding: 20px; /* Add some padding for better spacing */
-    max-width: 800px; /* Optional: limit width for better readability */
+    margin: 0 auto; 
+    padding: 20px; 
+    max-width: 800px; 
 }
 
 nav a { /* links within "nav" container */
